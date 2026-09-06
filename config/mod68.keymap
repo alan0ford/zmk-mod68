@@ -2,6 +2,104 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        ma1: ma1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp GRAVE>, <&macro_tap>, <&kp E>;
+
+            label = "MA1";
+        };
+
+        ma2: ma2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp GRAVE>, <&macro_tap>, <&kp U>;
+
+            label = "MA2";
+        };
+
+        ma3: ma3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp GRAVE>, <&macro_tap>, <&kp I>;
+
+            label = "MA3";
+        };
+
+        ma4: ma4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp GRAVE>, <&macro_tap>, <&kp O>;
+
+            label = "MA4";
+        };
+
+        ma5: ma5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp GRAVE>, <&macro_tap>, <&kp A>;
+
+            label = "MA5";
+        };
+
+        ma6: ma6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp SINGLE_QUOTE>,
+                <&macro_tap>,
+                <&kp SPACE>;
+
+            label = "MA6";
+        };
+
+        ma7: ma7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp GRAVE>, <&macro_tap>, <&kp SPACE>;
+
+            label = "MA7";
+        };
+
+        ma8: ma8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RIGHT_ALT>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp SEMICOLON>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_release>,
+                <&kp RIGHT_ALT>;
+
+            label = "MA8";
+        };
+
+        ma9: ma9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "MA9";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -9,8 +107,8 @@
             display-name = "Base";
             bindings = <
 &kp ESC         &kp N1        &kp N2        &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8     &kp N9         &kp N0         &kp MINUS         &kp EQUAL          &kp BACKSPACE   &kp HOME
-&kp TAB         &kp Q         &kp W         &kp E   &kp R   &kp T      &kp Y   &kp U   &kp I      &kp O          &kp P          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH   &kp DEL
-&kp CAPSLOCK    &kp A         &kp S         &kp D   &kp F   &kp G      &kp H   &kp J   &kp K      &kp L          &kp SEMICOLON  &kp SINGLE_QUOTE                     &kp ENTER       &kp PG_UP
+&lt 1 TAB       &kp Q         &kp W         &kp E   &kp R   &kp T      &kp Y   &kp U   &kp I      &kp O          &kp P          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH   &kp DEL
+&kp CAPSLOCK    &kp A         &kp S         &kp D   &kp F   &kp G      &kp H   &kp J   &kp K      &kp L          &kp SEMICOLON  &ma6                                 &kp ENTER       &kp PG_UP
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C   &kp V   &kp B      &kp N   &kp M   &kp COMMA  &kp PERIOD     &kp SLASH      &kp RIGHT_SHIFT                      &kp UP          &kp PAGE_DOWN
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT                  &kp SPACE                  &mo 1      &kp RIGHT_ALT  &kp RCTRL      &kp LEFT_ARROW                       &kp DOWN_ARROW  &kp RIGHT
             >;
@@ -18,11 +116,21 @@
 
         layer_1 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans
-&trans  &trans  &trans                  &trans                  &trans  &trans  &trans  &trans          &trans  &trans
+&ma7    &kp F1      &kp F2       &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &ma9      &ma9
+&trans  &trans      &trans       &ma1    &trans  &trans  &trans  &ma2    &ma3    &ma4    &trans   &trans   &trans   &kp HOME  &trans
+&trans  &ma5        &trans       &trans  &trans  &ma8    &trans  &trans  &trans  &trans  &trans   &trans            &trans    &kp C_VOL_UP
+&trans  &trans      &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans            &trans    &kp C_VOL_DN
+&trans  &kp C_MENU  &kp C_POWER                  &trans                  &trans  &mo 2   &trans   &trans            &trans    &trans
+            >;
+        };
+
+        layer_2 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &bootloader  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans
+&trans  &trans  &trans                  &trans                       &trans  &trans  &trans  &trans          &trans  &trans
             >;
         };
     };
