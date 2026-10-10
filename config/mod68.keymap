@@ -164,11 +164,11 @@
 
         layer_1 {
             bindings = <
-&ma7    &kp F1              &kp F2       &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &ma9      &ma9
-&trans  &ma10               &trans       &ma1    &trans  &trans  &trans  &ma2    &ma3    &ma4    &ma11    &trans   &trans   &kp HOME  &trans
-&trans  &ma5                &trans       &ma12   &trans  &ma8    &trans  &trans  &trans  &trans  &trans   &trans            &trans    &kp C_VOL_UP
-&trans  &trans              &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans            &trans    &kp C_VOL_DN
-&trans  &mt LEFT_SHIFT F10  &kp C_POWER                  &trans                  &trans  &mo 2   &trans   &trans            &trans    &trans
+&ma7    &kp F1       &kp F2       &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &ma9      &ma9
+&trans  &ma10        &trans       &ma1    &trans  &trans  &trans  &ma2    &ma3    &ma4    &ma11    &trans   &trans   &kp HOME  &trans
+&trans  &ma5         &trans       &ma12   &trans  &ma8    &trans  &trans  &trans  &trans  &trans   &trans            &trans    &kp C_VOL_UP
+&trans  &trans       &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans            &trans    &kp C_VOL_DN
+&trans  &kp K_CMENU  &kp C_POWER                  &trans                  &trans  &mo 2   &trans   &trans            &trans    &trans
             >;
         };
 
