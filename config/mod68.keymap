@@ -148,6 +148,14 @@
         };
     };
 
+    behaviors {
+        /* Scrive "Level Bat. NN %" con la carica della batteria */
+        battery_printer: battery_printer {
+            compatible = "zmk,behavior-battery-printer";
+            #binding-cells = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -174,7 +182,7 @@
 
         layer_2 {
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&battery_printer  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans          &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans          &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans
 &trans  &out OUT_TOG  &bt BT_NXT    &bt BT_CLR_ALL  &bt BT_PRV    &bootloader   &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans
